@@ -19,11 +19,11 @@
 
 	<groupId>acme</groupId>
 	<artifactId>Acme-Jobs</artifactId>
-	<version>5.0</version>
+	<version>5.1</version>
 	<packaging>war</packaging>
 
 	<name>Acme-Jobs</name>
-	<description>Tercer entregable del proyecto Acme Jobs para DP.</description>
+	<description>Control check del proyecto Acme Jobs para DP.</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
