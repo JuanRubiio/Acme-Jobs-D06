@@ -1,0 +1,13 @@
+authenticated.worker.job.form.label.reference = Referencia
+authenticated.worker.job.form.label.title =  Título
+authenticated.worker.job.form.label.status = Estatus
+authenticated.worker.job.form.label.deadline = Fecha Límite
+authenticated.worker.job.form.label.description = Descripción 
+authenticated.worker.job.form.label.link = Enlace
+authenticated.worker.job.form.label.salary = Salario
+authenticated.worker.job.form.label.active = Modo Final
+authenticated.worker.job.form.button.return = Volver
+authenticated.worker.job.form.label.percentage = Percentage
+authenticated.worker.job.form.label.active.duty = Servicios
+authenticated.worker.job.form.label.application = Aplicaciones
+authenticated.employer.job.form.label.create = Crear Solicitud para este trabajo
