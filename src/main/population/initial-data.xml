@@ -31,6 +31,7 @@
 				<property name="name" value="John" />
 				<property name="surname" value="Doe" />
 				<property name="email" value="john.doe@acme.com" />
+				<property name="phone" value="+33 (15) 125-668"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -55,6 +56,7 @@
 				<property name="name" value="Administrator" />
 				<property name="surname" value="Acme.com" />
 				<property name="email" value="administrator@acme.com" />
+				<property name="phone" value="+15 (01) 127-968"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -71,6 +73,15 @@
 	
 	<bean name="administratorAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="administratorUserAccount" />
+	</bean>
+	
+		
+	<bean id="customisation1" class="acme.entities.customisationParameters.CustomisationParameters">
+		
+		<property name="spamThreshold" value="1.00"/>  
+		<property name="spamWordsEn" value="sex, hard core, viagra, cialis, nigeria, you´ve won, million dollar"/>
+		<property name="spamWordsEs" value="sexo, duro, viagra, cialis, ha ganado, millón de dolares"/>
+  
 	</bean>
 	
 </beans>
