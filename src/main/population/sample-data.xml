@@ -371,6 +371,7 @@
 				<property name="name" value="Juan" />
 				<property name="surname" value="Jimenez" />
 				<property name="email" value="john.doe@acme.com" />
+				<property name="phone" value="+34 123 456 789"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -404,6 +405,7 @@
 				<property name="name" value="Juan" />
 				<property name="surname" value="Jimenez" />
 				<property name="email" value="john.doe@acme.com" />
+				<property name="phone" value="+34 113 436 769"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -435,6 +437,7 @@
 				<property name="name" value="Auditor" />
 				<property name="surname" value="One" />
 				<property name="email" value="auditor.one@acme.com" />
+				<property name="phone" value="+2 128436"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -463,6 +466,7 @@
 				<property name="name" value="Auditor" />
 				<property name="surname" value="Two" />
 				<property name="email" value="auditor.two@acme.com" />
+				<property name="phone" value="+15 153466"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -629,6 +633,7 @@
 					<property name="name" value="Carlos" />
 					<property name="surname" value="Garcia" />
 					<property name="email" value="garcia@acme.com" />
+					<property name="phone" value="+24 (14) 325698"/>
 				</bean>
 			</property>
 			<property name="roles">
@@ -659,6 +664,7 @@
 					<property name="name" value="Tomas" />
 					<property name="surname" value="Lopez" />
 					<property name="email" value="tm@acme.com" />
+					<property name="phone" value="+42 (14) 325-648"/>
 				</bean>
 			</property>
 			<property name="roles">
@@ -808,6 +814,7 @@
 					<property name="name" value="Casto" />
 					<property name="surname" value="Guerrero" />
 					<property name="email" value="guerrero@acme.com" />
+					<property name="phone" value="+954 (52) 324698"/>
 				</bean>
 			</property>
 			<property name="roles">
@@ -836,6 +843,7 @@
 				<property name="name" value="Ale" />
 				<property name="surname" value="Martin" />
 				<property name="email" value="ale@acme.com" />
+				<property name="phone" value="+66 (34) 325-691"/>
 			</bean>
 		</property>
 		<property name="roles">
