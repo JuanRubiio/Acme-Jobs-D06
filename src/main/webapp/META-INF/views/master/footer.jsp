@@ -12,6 +12,8 @@
 
 <%@page language="java"%>
 
+<%@page import="acme.entities.banners.Banner"%>
+
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
@@ -37,3 +39,5 @@
 	</acme:footer-logo>		
 	
 </acme:footer-panel>
+
+	<img src="${banner.target}" style="display: block; margin-left: auto; margin-right: auto; border-style: solid; margin-top: 10px"></img>	

@@ -66,6 +66,30 @@
 			</list>
 		</property>
 	</bean>
+	
+	<bean name="sponsorUserAccount" class="acme.framework.entities.UserAccount">
+			<property name="username" value="sponsor" />
+			<property name="password" value="sponsor" />
+			<property name="enabled" value="true" />
+			<property name="identity">
+				<bean class="acme.datatypes.UserIdentity">
+					<property name="name" value="Casto" />
+					<property name="surname" value="Guerrero" />
+					<property name="email" value="guerrero@acme.com" />
+					<property name="phone" value="+954 (52) 324698"/>
+				</bean>
+			</property>
+			<property name="roles">
+				<list>
+					<ref bean="sponsorSponsor" />
+				</list>
+			</property>
+		</bean>
+	
+	<bean name="sponsorSponsor" class="acme.entities.roles.Sponsor">
+		<property name="organisationName" value="LooneyTunes" />
+		<property name="userAccount" ref="sponsorUserAccount" />
+	</bean>
 
 	<bean name="administratorAdministrator" class="acme.framework.entities.Administrator">
 		<property name="userAccount" ref="administratorUserAccount" />
@@ -82,6 +106,46 @@
 		<property name="spamWordsEn" value="sex, hard core, viagra, cialis, nigeria, you´ve won, million dollar"/>
 		<property name="spamWordsEs" value="sexo, duro, viagra, cialis, ha ganado, millón de dolares"/>
   
+	</bean>
+	
+	<bean id="default01" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+		<property name="jingle" value="Acme Jingle"/>
+	</bean>
+	
+	<bean id="default02" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="jingle" value="Acme jingle"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+	</bean>
+	
+	<bean id="default03" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/2eVF1HG.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/2eVF1HG.png"/>
+		<property name="jingle" value="Acme jingle"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+	</bean>
+	
+	<bean id="default04" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/fihihcF.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/fihihcF.png"/>
+		<property name="jingle" value="Acme jingle"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+	</bean>
+	
+	<bean id="default05" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/MtBRoNP.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/MtBRoNP.png"/>
+		<property name="jingle" value="Acme jingle"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
 	</bean>
 	
 </beans>
