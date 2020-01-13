@@ -140,12 +140,15 @@
 		<property name="sponsor" ref="sponsorSponsor"/>
 	</bean>
 	
-	<bean id="default05" class="acme.entities.banners.NonCommercialBanner">
+	<bean id="default05" class="acme.entities.banners.CommercialBanner">
 		<property name="picture" value="https://i.imgur.com/MtBRoNP.png"/>
 		<property name="slogan" value="Acme slogan"/>
 		<property name="target" value="https://i.imgur.com/MtBRoNP.png"/>
-		<property name="jingle" value="Acme jingle"/>
 		<property name="sponsor" ref="sponsorSponsor"/>
-	</bean>
+		<property name="creditCard" value="379354508162306"/>
+		<property name="monthExpired" value="02"/>
+		<property name="yearExpired" value="2020"/>
+		<property name="CVV" value="456"/>
+	</bean> 
 	
 </beans>
