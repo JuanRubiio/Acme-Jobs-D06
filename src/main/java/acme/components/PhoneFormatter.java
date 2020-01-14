@@ -21,8 +21,8 @@ public class PhoneFormatter implements Formatter<Phone> {
 		assert object != null;
 		assert locale != null;
 
-		String result = null;
-		String countryCodeText, areaCodeText, numberText = null;
+		String result;
+		String countryCodeText, areaCodeText, numberText;
 
 		countryCodeText = String.format("%d", object.getCountryCode());
 		areaCodeText = object.getAreaCode() == null ? " " : String.format(" (%s) ", object.getAreaCode());
@@ -31,7 +31,6 @@ public class PhoneFormatter implements Formatter<Phone> {
 		result = String.format("+%s%s%s", countryCodeText, areaCodeText, numberText);
 
 		return result;
-
 	}
 
 	@Override
