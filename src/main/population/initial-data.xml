@@ -99,6 +99,14 @@
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
 	
+	<bean id="creditCard1" class="acme.entities.creditCard.CreditCard">
+		<property name="creditCard" value="379354508162306"/>
+		<property name="monthExpired" value="02"/>
+		<property name="yearExpired" value="2020"/>
+		<property name="CVV" value="456"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+	</bean>
+	
 		
 	<bean id="customisation1" class="acme.entities.customisationParameters.CustomisationParameters">
 		
