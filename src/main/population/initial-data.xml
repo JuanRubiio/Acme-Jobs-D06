@@ -82,10 +82,14 @@
 			<property name="roles">
 				<list>
 					<ref bean="sponsorSponsor" />
+					<ref bean="sponsorAuthenticated" />
 				</list>
 			</property>
 		</bean>
 	
+	<bean name="sponsorAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="sponsorUserAccount" />
+	</bean>
 	<bean name="sponsorSponsor" class="acme.entities.roles.Sponsor">
 		<property name="organisationName" value="LooneyTunes" />
 		<property name="userAccount" ref="sponsorUserAccount" />
