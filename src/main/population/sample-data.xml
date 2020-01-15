@@ -354,77 +354,6 @@
 		</property>
 	</bean>
 	
-	<bean id="customisation1" class="acme.entities.customisationParameters.CustomisationParameters">
-		
-		<property name="spamThreshold" value="1.00"/>  
-		<property name="spamWordsEn" value="sex, hard core, viagra, cialis, nigeria, you´ve won, million dollar"/>
-		<property name="spamWordsEs" value="sexo, duro, viagra, cialis, ha ganado, millón de dolares"/>
-  
-	</bean>
-		
-		
-	<bean name="consumerUserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="consumer" />
-		<property name="password" value="consumer" />
-		<property name="enabled" value="true" />
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Juan" />
-				<property name="surname" value="Jimenez" />
-				<property name="email" value="john.doe@acme.com" />
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="consumerConsumer" />
-				<ref bean="consumerAuthenticated" />
-			</list>
-		</property>
-	</bean>
-	
-		
-	<bean name="consumerConsumer" class="acme.entities.roles.Consumer">
-		<property name="company" value="acme" />
-		<property name="sector" value="acme" />	
-		<property name="userAccount" ref="consumerUserAccount" />
-	</bean>
-	
-	<bean name="consumerAuthenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="consumerUserAccount" />
-	</bean>
-	
-	
-	<bean name="providerUserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="provider" />
-		<property name="password" value="provider" />
-		<property name="enabled" value="true" />
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Augusto" />
-				<property name="surname" value="Rivero" />
-				<property name="email" value="john.doe@acme.com" />
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="providerProvider" />
-				<ref bean="providerAuthenticated" />
-			</list>
-		</property>
-	</bean>
-	
-		
-	<bean name="providerProvider" class="acme.entities.roles.Provider">
-		<property name="company" value="acme" />
-		<property name="sector" value="acme" />	
-		<property name="userAccount" ref="providerUserAccount" />
-	</bean>
-	
-	<bean name="providerAuthenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="providerUserAccount" />
-	</bean>
-
-
 	<bean name="employerUserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="employer" />
 		<property name="password" value="employer" />
@@ -434,13 +363,13 @@
 				<property name="name" value="Juan" />
 				<property name="surname" value="Jimenez" />
 				<property name="email" value="john.doe@acme.com" />
+				<property name="phone" value="+34 123 456 789"/>
 			</bean>
 		</property>
 		<property name="roles">
 			<list>
 				<ref bean="employerEmployer" />
 				<ref bean="employerAuthenticated" />
- 				<ref bean="employerProvider" />
  			</list>
 		</property>
 	</bean>
@@ -457,11 +386,6 @@
 		<property name="userAccount" ref="employerUserAccount" />
 	</bean>
 
- 	<bean name="employerProvider" class="acme.entities.roles.Provider">
-		<property name="company" value="acme" />
-		<property name="sector" value="acme" />	
-		<property name="userAccount" ref="employerUserAccount" />
-	</bean>
 	
 	
 		<bean name="employerUserAccount2" class="acme.framework.entities.UserAccount">
@@ -473,6 +397,7 @@
 				<property name="name" value="Juan" />
 				<property name="surname" value="Jimenez" />
 				<property name="email" value="john.doe@acme.com" />
+				<property name="phone" value="+34 113 436 769"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -504,6 +429,7 @@
 				<property name="name" value="Auditor" />
 				<property name="surname" value="One" />
 				<property name="email" value="auditor.one@acme.com" />
+				<property name="phone" value="+2 128436"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -532,6 +458,7 @@
 				<property name="name" value="Auditor" />
 				<property name="surname" value="Two" />
 				<property name="email" value="auditor.two@acme.com" />
+				<property name="phone" value="+15 153466"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -698,6 +625,7 @@
 					<property name="name" value="Carlos" />
 					<property name="surname" value="Garcia" />
 					<property name="email" value="garcia@acme.com" />
+					<property name="phone" value="+24 (14) 325698"/>
 				</bean>
 			</property>
 			<property name="roles">
@@ -728,6 +656,7 @@
 					<property name="name" value="Tomas" />
 					<property name="surname" value="Lopez" />
 					<property name="email" value="tm@acme.com" />
+					<property name="phone" value="+42 (14) 325-648"/>
 				</bean>
 			</property>
 			<property name="roles">
@@ -868,33 +797,6 @@
 		<property name="job" ref="job1"/>
 	</bean>
 	
-	<bean name="sponsorUserAccount" class="acme.framework.entities.UserAccount">
-			<property name="username" value="sponsor" />
-			<property name="password" value="sponsor" />
-			<property name="enabled" value="true" />
-			<property name="identity">
-				<bean class="acme.datatypes.UserIdentity">
-					<property name="name" value="Casto" />
-					<property name="surname" value="Guerrero" />
-					<property name="email" value="guerrero@acme.com" />
-				</bean>
-			</property>
-			<property name="roles">
-				<list>
-					<ref bean="sponsorSponsor" />
-					<ref bean="sponsorAuthenticated" />
-				</list>
-			</property>
-		</bean>
-
-	<bean name="sponsorSponsor" class="acme.entities.roles.Sponsor">
-		<property name="organisationName" value="LooneyTunes" />
-		<property name="userAccount" ref="sponsorUserAccount" />
-	</bean>
-	
-	<bean name="sponsorAuthenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="sponsorUserAccount" />
-	</bean>
 	
 	<bean name="sponsorUserAccount2" class="acme.framework.entities.UserAccount">
 		<property name="username" value="sponsor2" />
@@ -905,6 +807,7 @@
 				<property name="name" value="Ale" />
 				<property name="surname" value="Martin" />
 				<property name="email" value="ale@acme.com" />
+				<property name="phone" value="+66 (34) 325-691"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -925,43 +828,8 @@
 		<property name="userAccount" ref="sponsorUserAccount2" />
 	</bean>
 	
-	<bean id="creditCard1" class="acme.entities.creditCard.CreditCard">
-		<property name="creditCard" value="379354508162306"/>
-		<property name="monthExpired" value="02"/>
-		<property name="yearExpired" value="2020"/>
-		<property name="CVV" value="456"/>
-		<property name="sponsor" ref="sponsorSponsor"/>
-	</bean>
-	
-	<bean id="banner01" class="acme.entities.banners.CommercialBanner">
-		<property name="picture" value="Titulo"/>
-		<property name="slogan" value="Paga el banner"/>
-		<property name="target" value="https://www.imagen.com"/>
-		<property name="sponsor" ref="sponsorSponsor"/>
-		<property name="creditCard" value="379354508162306"/>
-		<property name="monthExpired" value="02"/>
-		<property name="yearExpired" value="2020"/>
-		<property name="CVV" value="456"/>
-	</bean> 
-	
-	<bean id="banner02" class="acme.entities.banners.NonCommercialBanner">
-		<property name="picture" value="Titulo2"/>
-		<property name="slogan" value="Slogan no comercial"/>
-		<property name="target" value="https://www.imagen2.com"/>
-		<property name="sponsor" ref="sponsorSponsor"/>
-		<property name="jingle" value="Jingle Bells, jingle bells, Jingle all the way!"/>
-	</bean> 
-	
-	<bean id="banner03" class="acme.entities.banners.NonCommercialBanner">
-		<property name="picture" value="Titulo3"/>
-		<property name="slogan" value="Slogan no comercial"/>
-		<property name="target" value="https://www.imagen.com"/>
-		<property name="sponsor" ref="sponsorSponsor2"/>
-		<property name="jingle" value="Ho Ho Ho!"/>
-	</bean> 
 
 
-    
 <!--  Messages -->
 	
 	<bean id="message1" class="acme.entities.message.Message">
@@ -1187,7 +1055,7 @@
 		<property name="user" ref="workerUserAccount"/>
 		<property name="creatorThread" value = "true"/>
 	</bean>
-
+	
 
 </beans>
 

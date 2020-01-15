@@ -31,6 +31,7 @@
 				<property name="name" value="John" />
 				<property name="surname" value="Doe" />
 				<property name="email" value="john.doe@acme.com" />
+				<property name="phone" value="+33 (15) 125-668"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -55,6 +56,7 @@
 				<property name="name" value="Administrator" />
 				<property name="surname" value="Acme.com" />
 				<property name="email" value="administrator@acme.com" />
+				<property name="phone" value="+15 (01) 127-968"/>
 			</bean>
 		</property>
 		<property name="roles">
@@ -64,6 +66,30 @@
 			</list>
 		</property>
 	</bean>
+	
+	<bean name="sponsorUserAccount" class="acme.framework.entities.UserAccount">
+			<property name="username" value="sponsor" />
+			<property name="password" value="sponsor" />
+			<property name="enabled" value="true" />
+			<property name="identity">
+				<bean class="acme.datatypes.UserIdentity">
+					<property name="name" value="Casto" />
+					<property name="surname" value="Guerrero" />
+					<property name="email" value="guerrero@acme.com" />
+					<property name="phone" value="+954 (52) 324698"/>
+				</bean>
+			</property>
+			<property name="roles">
+				<list>
+					<ref bean="sponsorSponsor" />
+				</list>
+			</property>
+		</bean>
+	
+	<bean name="sponsorSponsor" class="acme.entities.roles.Sponsor">
+		<property name="organisationName" value="LooneyTunes" />
+		<property name="userAccount" ref="sponsorUserAccount" />
+	</bean>
 
 	<bean name="administratorAdministrator" class="acme.framework.entities.Administrator">
 		<property name="userAccount" ref="administratorUserAccount" />
@@ -72,5 +98,65 @@
 	<bean name="administratorAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
+	
+	<bean id="creditCard1" class="acme.entities.creditCard.CreditCard">
+		<property name="creditCard" value="379354508162306"/>
+		<property name="monthExpired" value="02"/>
+		<property name="yearExpired" value="2020"/>
+		<property name="CVV" value="456"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+	</bean>
+	
+		
+	<bean id="customisation1" class="acme.entities.customisationParameters.CustomisationParameters">
+		
+		<property name="spamThreshold" value="1.00"/>  
+		<property name="spamWordsEn" value="sex, hard core, viagra, cialis, nigeria, you´ve won, million dollar"/>
+		<property name="spamWordsEs" value="sexo, duro, viagra, cialis, ha ganado, millón de dolares"/>
+  
+	</bean>
+	
+	<bean id="default01" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+		<property name="jingle" value="Acme Jingle"/>
+	</bean>
+	
+	<bean id="default02" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="jingle" value="Acme jingle"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+	</bean>
+	
+	<bean id="default03" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/2eVF1HG.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/2eVF1HG.png"/>
+		<property name="jingle" value="Acme jingle"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+	</bean>
+	
+	<bean id="default04" class="acme.entities.banners.NonCommercialBanner">
+		<property name="picture" value="https://i.imgur.com/fihihcF.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/fihihcF.png"/>
+		<property name="jingle" value="Acme jingle"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+	</bean>
+	
+	<bean id="default05" class="acme.entities.banners.CommercialBanner">
+		<property name="picture" value="https://i.imgur.com/MtBRoNP.png"/>
+		<property name="slogan" value="Acme slogan"/>
+		<property name="target" value="https://i.imgur.com/MtBRoNP.png"/>
+		<property name="sponsor" ref="sponsorSponsor"/>
+		<property name="creditCard" value="379354508162306"/>
+		<property name="monthExpired" value="02"/>
+		<property name="yearExpired" value="2020"/>
+		<property name="CVV" value="456"/>
+	</bean> 
 	
 </beans>
