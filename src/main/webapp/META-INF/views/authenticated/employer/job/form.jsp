@@ -5,6 +5,8 @@
 <acme:form>
 	<acme:form-textbox code="authenticated.employer.job.form.label.reference" path="reference" placeholder="EEEE-JJJJ"/>
 	<acme:form-textbox code="authenticated.employer.job.form.label.title" path="title"/>
+	
+	<jstl:if test="${command != 'create'}">
  	<acme:form-select code="authenticated.employer.job.form.label.status" path="status">
  		<jstl:choose>
 			<jstl:when test="${status == 'Published' }">
@@ -25,6 +27,7 @@
 		<acme:form-option code="Draft" value="Draft" selected="${draftSelected}"/>
 		<acme:form-option code="Published" value="Published" selected="${publishedSelected}"/>
 	</acme:form-select>
+	</jstl:if>
 	<acme:form-moment code="authenticated.employer.job.form.label.deadline" path="deadline"/>
 	<acme:form-url code="authenticated.employer.job.form.label.link" path="link"/>
 	<acme:form-money code="authenticated.employer.job.form.label.salary" path="salary"/>
