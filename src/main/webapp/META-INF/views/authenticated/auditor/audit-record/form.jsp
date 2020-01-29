@@ -20,8 +20,9 @@
 <input name="jobId" id="jobId" type="hidden" value="${param.jobId}"/>
 
 	<acme:form-textbox code="authenticated.auditor.audit-record.form.label.title" path="title"/>
-	<acme:form-moment code="authenticated.auditor.audit-record.form.label.moment" path="moment"/>
-	
+	<jstl:if test="${command != 'create' && command != 'update'}">
+		<acme:form-moment code="authenticated.auditor.audit-record.form.label.moment" path="moment"/>
+	</jstl:if>
 	
 	<acme:form-select code="authenticated.auditor.audit-record.form.label.status" path="status">
 		<jstl:choose>
